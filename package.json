@@ -1,0 +1,16 @@
+{
+  "name": "sentiment-alert-mono",
+  "private": true,
+  "scripts": {
+    "server:dev": "npm --prefix server run dev",
+    "server:build": "npm --prefix server run build",
+    "server:start": "npm --prefix server start",
+    "web:dev": "npm --prefix web/web run dev",
+    "web:build": "npm --prefix web/web run build",
+    "dev": "concurrently -n server,web -c blue,green \"npm:server:dev\" \"npm:web:dev\"",
+    "build": "npm run server:build && npm run web:build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
